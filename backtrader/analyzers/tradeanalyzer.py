@@ -87,8 +87,8 @@ class TradeAnalyzer(Analyzer):
 
             won = res.won = int(trade.pnlcomm >= 0.0)
             lost = res.lost = int(not won)
-            tlong = res.tlong = trade.long
-            tshort = res.tshort = not trade.long
+            tlong = res.tlong = int(trade.long)
+            tshort = res.tshort = int(not trade.long)
 
             trades.total.open -= 1
             trades.total.closed += 1
